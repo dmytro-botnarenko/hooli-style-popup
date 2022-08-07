@@ -79,10 +79,12 @@ div {
 }
 .toggle {
     position: absolute;
-    opacity: 1;
-    /* right: 10px; */
-    /* height: 40px; */
-    /* appearance: none; */
+    /* opacity: 0.5; */
+    right: 238px;
+    height: 24px;
+    width: 24px;
+    appearance: none;
+    cursor: pointer;
 }
 .toggle:checked + .popup__container {
     height: 200px;
@@ -101,9 +103,7 @@ div {
 .popup__image {
     height: 24px;
     width: 24px;
-    
     background-size: cover;
     /*background-image: url("img/bell.png");*/
     background-color: #cccccc;
-    
 }
