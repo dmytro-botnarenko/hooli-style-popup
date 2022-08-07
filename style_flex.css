@@ -75,21 +75,25 @@ div {
     height:0px;
     overflow: hidden;
     /*transition: height .4s ease;*/
-    
+    display: none; 
+}
+.toggle {
     position: absolute;
-    top: 50px;
-    right: 150px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-  }
-
-.toggle {position: absolute; opacity: 1; height: 10px;}
-
+    opacity: 1;
+    /* right: 10px; */
+    /* height: 40px; */
+    /* appearance: none; */
+}
 .toggle:checked + .popup__container {
     height: 200px;
     width: 200px;
     border: 1px solid black;
+    position: absolute;
+    top: 50px;
+    right: 150px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
 }
 .popup__item {
     padding: 5px;
