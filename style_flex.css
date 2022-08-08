@@ -76,7 +76,6 @@ div {
 /*popup*/
 .popup__menu {
     position: relative;
-    display: flex;
 }
 .toggle {
     position: absolute;
@@ -88,10 +87,14 @@ div {
     cursor: pointer;
 }
 .popup__container {
-    height:0px;
     overflow: hidden;
     transition: height .4s ease;
-    display: none;
+    /* display: none; */
+    position: absolute;
+    top: 40px;
+    right: -80px;
+    border: 1px solid black;
+    opacity: 0;
 }
 .toggle:checked {
     border: 1px solid blueviolet;
@@ -100,19 +103,16 @@ div {
 }
 .toggle:checked + .popup__container {
     /* max-height: 500px; */
-    width: 100%;
-    border: 1px solid black;
-    position: absolute;
-    top: 40px;
-    right: -80px;
+    /* border: 1px solid black; */
     /* display: grid;
     grid-template-columns: repeat(1,1fr);
     grid-template-rows: repeat(2,1fr); */
     /* display: flex;
     flex-direction: column; */
+    opacity: 1;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(6,1fr);
+    grid-template-rows: repeat(3,1fr);
 }
 .popup__box {
     /* display: grid;
@@ -120,6 +120,7 @@ div {
     grid-template-rows: repeat(6,1fr); */
 }
 .popup__item {
+    position: relative;
     padding: 5px;
     border: 1px dashed green;
     font-size: 0.8em;
