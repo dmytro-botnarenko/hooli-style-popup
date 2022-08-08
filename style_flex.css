@@ -30,6 +30,7 @@ div {
 }
 .wrapper {
     min-height: 100%;
+    overflow: hidden;
 }
 .navigation__menu {
     display: flex;
@@ -79,7 +80,6 @@ div {
 }
 .toggle {
     position: absolute;
-    /* opacity: 0.5; */
     right: 0px;
     height: 24px;
     width: 24px;
@@ -89,12 +89,11 @@ div {
 .popup__container {
     overflow: hidden;
     transition: height .4s ease;
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 40px;
     right: -80px;
     border: 1px solid black;
-    opacity: 0;
 }
 .toggle:checked {
     border: 1px solid blueviolet;
@@ -102,22 +101,16 @@ div {
     box-shadow: 2px 2px 2px rgba(27, 5, 48, 0.5);
 }
 .toggle:checked + .popup__container {
-    /* max-height: 500px; */
-    /* border: 1px solid black; */
-    /* display: grid;
-    grid-template-columns: repeat(1,1fr);
-    grid-template-rows: repeat(2,1fr); */
-    /* display: flex;
-    flex-direction: column; */
     opacity: 1;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 .popup__box {
-    /* display: grid;
+    display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(6,1fr); */
+    grid-auto-flow: row;
 }
 .popup__item {
     position: relative;
@@ -140,4 +133,21 @@ div {
     background-size: cover;
     /*background-image: url("img/bell.png");*/
     background-color: #cccccc;
+}
+.popup__more {
+    display: none;
+}
+.toggle__more {
+    /* position: absolute;
+    right: 0px;
+    height: 24px;
+    width: 24px; */
+    
+    /* appearance: none; */
+    cursor: pointer;
+}
+.toggle__more:checked ~ .popup__more {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-flow: row;
 }
