@@ -25,7 +25,13 @@
                     <div class="navigation__image image__popup"></div>
                     <nav class="popup__menu">          
                         <input class="toggle" type="checkbox">
-                        <div class="popup__container">   
+                        <div class="popup__container">
+                            <!-- <div class="container__toggle__more">
+                                
+                                
+                            </div> -->
+                            <label for="toggle__more" style="border: 1px solid black;">More</label>
+                            <input #toggle__more class="toggle__more" type="checkbox">
                             <div class="popup__box">                        
                                 <div class="popup__item">
                                     <a href="#" class="popup__link">
@@ -99,12 +105,7 @@
                                         <p>Documents</p>
                                     </a>
                                 </div>
-                            </div>
-                            <div class="container__toggle__more">
-                                    <label for="toggle__more" style="border: 1px solid black;">More...</label>
-                            </div>   
-                            <input #toggle__more class="toggle__more" type="checkbox">
-                            <div class="popup__more">
+                                <div class="popup__more">
                                     <div class="popup__item">
                                         <a href="#" class="popup__link">
                                             <div class="popup__image"></div>
@@ -141,7 +142,11 @@
                                             <p>Promos</p>
                                         </a>
                                     </div>
-                            </div>                            
+                                </div>
+                            </div>
+                               
+                            
+                                                        
                         </div>      
                     </nav>   
                 </div>
