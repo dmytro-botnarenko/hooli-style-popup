@@ -34,6 +34,7 @@ div {
 .navigation__menu {
     display: flex;
     justify-content: end;
+    align-items: center;
     /* border: 5px solid gray; */
 }
 .navigation__list {
@@ -60,10 +61,10 @@ div {
     width: 26px;
 }
 .image__popup {
-    background-image: url("img/popup-button.png");
+    background-image: url("img/menu.svg");
 }
 .image__notification {
-    background-image: url("img/bell.png");
+    background-image: url("img/alarm.svg");
 }
 .image__profile {
     /*background-image: url("img/bell.png");*/
@@ -96,7 +97,8 @@ div {
     transition: height .4s ease;
     display:flex;
     flex-direction: column;
-    max-height: 320px;
+    max-height: 330px;
+    padding: 10px;
     overflow: hidden;
     border: 1px solid black;
 }
@@ -107,28 +109,23 @@ div {
     grid-template-columns: repeat(3,1fr);
     grid-auto-flow: row;
 }
-.popup__item {
-    /* border: 1px solid yellow; */
-    /* padding: 2px; */
-}
 .popup__link {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
-    width: 50px;
-    height: 50px;
+    align-items:center;justify-content:space-around;
+    width: 70px;
+    height: 70px;
     padding: 5px;
+    font-size: 0.7em;
 }
 .popup__image {
-    height: 36px;
-    width: 36px;
-    background-size: cover;
-    align-self: center;
-}
-.popup__link p {
-    align-self: center;
-    font-size: 0.7em;
-    width: 100%;
-    text-align: center;
+    height: 35px;
+    width: 48px;
+    object-fit: contain;
+    align-content: center;
+    /* background-size: cover; */
+    /* align-self: center; */
+    /* min-height: 0 */
 }
 .popup__more {
     display: none;
@@ -139,14 +136,21 @@ div {
 .toggle:checked ~ .toggle__more {
     display: block;
     position: absolute;
-    left: 10px;
-    top: 250px;
-    z-index: 1;
-/*     width: 30px;
-    height: 30px; opacity: 0;*/
+    left: -20px;
+    top: 335px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    /* appearance: none; */
+    opacity: 0.5;
+}
+.toggle__more:checked {
+    
 }
 .toggle__more:checked ~ .popup__container {
     overflow-y: scroll;
+    max-height: 350px;
 }
 .toggle__more:checked ~ .popup__container .more {
     visibility: hidden;
@@ -155,7 +159,8 @@ div {
     order: 4;
     display:grid;
     grid-template-columns: repeat(3,1fr);
-    grid-auto-flow: row
+    grid-auto-flow: row;
+    z-index: 1;
 }
   .more {
     order: 2;
@@ -164,5 +169,5 @@ div {
     padding: 8px;
 }
 ::-webkit-scrollbar {
-    width: 3px;
+    width: 0px;
   }
