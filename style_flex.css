@@ -41,7 +41,7 @@ header {
     /* border: 5px solid gray; */
 }
 .navigation__list {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     flex-basis: 80px;
     min-height: 45px;
     display: flex;
@@ -49,7 +49,9 @@ header {
     align-items: center;
 }
 .navigation__link {
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
+    display: flex;
+    z-index: 2;
 }
 .navigation__link:hover {
     font-size: 1.1em;
@@ -57,25 +59,22 @@ header {
 .navigation__image {
     height: 24px;
     width: 24px;
-    /* background-size: cover; */
 }
 .navigation__image:hover {
     height: 26px;
     width: 26px;
+    z-index: 0;
 }
 
 /*popup*/
-.popup__menu {
-    position: relative;
-}
 .toggle {
-    /* position: absolute; */
-    /* right: 0px;
+    position: absolute;
     height: 24px;
-    width: 24px; */
-    /* appearance: none; */
+    width: 24px;
+    appearance: none;
     cursor: pointer;
-    opacity: 0.5;
+    /* opacity: 0.5; */
+    z-index: 1;
 }
 .popup__container {
     display: none;
@@ -87,8 +86,8 @@ header {
 }
 .toggle:checked ~ .popup__container {
     position: absolute;
-    top: 40px;
-    left: -120px;
+    top: 80px;
+    right: 95px;
     transition: height .4s ease;
     display:flex;
     flex-direction: column;
@@ -131,8 +130,8 @@ header {
 .toggle:checked ~ .toggle__more {
     display: block;
     position: absolute;
-    left: -20px;
-    top: 335px;
+    right: 195px;
+    top: 375px;
     z-index: 2;
     width: 34px;
     height: 34px;
@@ -141,7 +140,7 @@ header {
     opacity: 0.5;
 }
 .toggle__more:checked {
-    
+    z-index: 0;
 }
 .toggle__more:checked ~ .popup__container {
     overflow-y: scroll;
