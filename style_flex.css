@@ -10,7 +10,7 @@ html,
 body {
 	height: 100%;
 	background-color: white;
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-family: Tahoma, Helvetica, Arial, sans-serif;
 	color: #fff;
 	font-size: 16px;
 	line-height: 24px;
@@ -19,18 +19,15 @@ a {
 	color: #794f45;
     text-decoration: none;
 }
-ul {
-	list-style: none;
-}
-li  {
-    color: #794f45;
-}
 div {
     color: #794f45;
 }
 header {
     padding: 12px 14px;
     box-shadow: 0px 1px 30px 7px rgb(220 219 219);
+}
+*:focus {
+    outline: 1px solid #794f45;
 }
 .wrapper {
     min-height: 100%;
@@ -51,19 +48,26 @@ header {
 .navigation__link {
     /* border: 1px solid yellow; */
     display: flex;
+    justify-content: center;
     z-index: 2;
 }
 .navigation__link:hover {
     font-size: 1.1em;
 }
 .navigation__image {
-    height: 24px;
-    width: 24px;
+    width: 25%;
+}
+/* .popup__image {
+    width: 16px;
+    height: 16px;
+} */
+.profile__image {
+    width: 30px;
+    height: 30px;
+    border-radius: 15%;
 }
 .navigation__image:hover {
-    height: 26px;
-    width: 26px;
-    z-index: 0;
+    width: 28%;
 }
 
 /*popup*/
@@ -82,11 +86,6 @@ header {
 .label__toggle__more {
     display: none;
 }
-.toggle:checked {
-/*     border: 1px solid blueviolet;
-    border-radius: 2px;
-    box-shadow: 2px 2px 2px rgba(27, 5, 48, 0.5); */
-}
 .toggle:checked ~ .popup__container {
     position: absolute;
     top: 80px;
@@ -94,8 +93,7 @@ header {
     flex-direction: column;
     max-height: 355px;
     overflow-y: scroll;
-    padding: 0 10px;
-    /* border: 1px solid black; */
+    padding: 5px 10px;
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
     transition: height .4s ease;
 }
