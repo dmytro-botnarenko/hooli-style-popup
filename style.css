@@ -77,9 +77,9 @@ a {
     appearance: none;
     cursor: pointer;
 }
-.toggle:focus {
+/*.toggle:focus {
     outline: none;
-}
+}*/
 .popup__container {
     position: absolute;
     top: 80px;
@@ -121,10 +121,6 @@ a {
 .toggle:checked ~ .toggle__more {
     display: block;
     cursor: pointer;
-}
-.toggle__more:checked ~ .popup__container {
-    overflow-y: scroll;
-    max-height: 350px;
 }
 .toggle__more:checked ~ .popup__more {
     display:grid;
