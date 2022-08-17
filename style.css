@@ -6,13 +6,19 @@
 	border: 0;
 	box-sizing: border-box;
 }
+*:focus {
+    outline: none;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 1s;
+}
 html,
 body {
 	height: 100%;
 	background-color: white;
 	font-family: Tahoma, Helvetica, Arial, sans-serif;
 	color: #fff;
-	font-size: 16px;
+    font-size: calc(12px + 0.390625vw);
 	line-height: 24px;
     letter-spacing: 0.05em;
 }
@@ -24,15 +30,6 @@ a {
     padding: 12px 14px;
     box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
 }
-*:focus {
-    outline: none/* 2px solid rgba(0, 0, 0, 0.2) */;
-    border-radius: 3px;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-/* *:checked
-*:enabled {
-    outline: 0px;
-}*/
 .wrapper {
     min-height: 100%;
 }
@@ -68,10 +65,6 @@ a {
     border-radius: 15%;
     align-self: center;
 }
-/* .toggle__label:focus-within {
-    background: #ff8;
-    color: black;
-} */
 .popup__container,
 .popup__more,
 .label__toggle__more,
@@ -101,16 +94,14 @@ a {
     position: absolute;
     z-index: 1;
 }
-.popup__container {
+.toggle:checked ~ .popup__container {
+    overflow-y: scroll;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 80px;
     max-height: 365px;
-    overflow-y: scroll;
-    padding: 5px 10px;
-    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-}
-.toggle:checked ~ .popup__container {
     display:flex;
     flex-direction: column;
 }
@@ -122,7 +113,8 @@ a {
 .popup__link {
     display: inline-flex;
     flex-direction: column;
-    align-items:center;justify-content:space-around;
+    align-items:center;
+    justify-content:space-around;
     width: 70px;
     height: 70px;
     padding: 3px;
@@ -139,10 +131,6 @@ a {
     object-fit: contain;
     align-content: center;
 }
-/* .toggle:checked ~ .toggle__more {
-    display: block;
-    cursor: pointer;
-} */
 .toggle__more:checked ~ .label__toggle__more ~ .popup__more {
     display:grid;
     grid-template-columns: repeat(3,1fr);
@@ -169,11 +157,7 @@ a {
 }
 .toggle__more:checked {
     position: absolute;
-    top: 450px;
-}
-.toggle__more:focus {
-    outline: none;
-    background-color: rgba(0, 0, 0, 0.1);
+    top: 450px;    
 }
 ::-webkit-scrollbar {
     width: 0px;
