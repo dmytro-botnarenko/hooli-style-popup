@@ -24,14 +24,11 @@ a {
   padding: 12px 14px;
   box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.wrapper {
-  min-height: 100%;
-}
 .navigation__menu {
   display: flex;
   justify-content: end;
 }
-.navigation__list {
+.navigation__item {
   min-height: 45px;
   display: flex;
   flex: 0 1 80px;
@@ -110,7 +107,6 @@ a {
 }
 .popup__image {
   height: 35px;
-  width: 48px;
   object-fit: contain;
   align-content: center;
 }
@@ -131,7 +127,7 @@ a {
 }
 .label__toggle__more:hover,
 .toggle__more:checked ~ .label__toggle__less:hover {
-  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 8px 1px rgb(0, 0, 0, 0.2);
 }
 .toggle__more:checked ~ .label__toggle__more {
   display: none;
@@ -141,7 +137,7 @@ a {
 .toggle:focus ~ .label__toggle,
 .toggle__more:focus ~ .label__toggle__more,
 .toggle__more:focus ~ .label__toggle__less {
-  outline: 2px solid rgba(0, 0, 0, 0.1);
+  outline: 2px solid rgb(200, 200, 200);
   border-radius: 3px;
 }
 .popup__container::-webkit-scrollbar {
