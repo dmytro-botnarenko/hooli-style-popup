@@ -31,10 +31,11 @@ a {
 .navigation__item {
   min-height: 45px;
   display: flex;
-  flex: 0 1 80px;
+  flex: 0 1 70px;
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-left: 10px;
 }
 .navigation__link {
   display: flex;
